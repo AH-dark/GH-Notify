@@ -4,8 +4,8 @@ import dayjs from "dayjs";
 
 const PushHandler = async (data: Push, sender: Sender) => {
     let msg = [
-        `**有新的 <font color="warning">${data.forced && "Force "}Push</font> 事件**`,
-        `仓库: [${data.repository.name}](${data.repository.html_url})${data.repository.private && " (Private)"}`,
+        `**有新的 <font color="warning">${data.forced ? "Force " : ""}Push</font> 事件**`,
+        `仓库: [${data.repository.name}](${data.repository.html_url})${data.repository.private ? " (Private)" : ""}`,
         `提交者：[${data.sender.login}](${data.sender.html_url})`,
     ];
 
