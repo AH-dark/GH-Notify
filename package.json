@@ -8,7 +8,8 @@
     "url": "https://github.com/AH-dark/GH-Notify"
   },
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.3"
   },
   "devDependencies": {
     "prettier": "^2.7.1",

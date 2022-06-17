@@ -1,11 +1,13 @@
-import Repository from "./repository";
-import Sender from "./sender";
+import Repository from "../repository";
+import Sender from "../sender";
+import Organization from "../organization";
 
-export default interface PingData {
+export default interface Ping {
     zen: string;
     hook_id: number;
     hook: Hook;
     repository: Repository;
+    organization?: Organization;
     sender: Sender;
 }
 

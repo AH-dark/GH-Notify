@@ -1,4 +1,6 @@
 export default interface Sender {
+    name?: string;
+    email?: string;
     login: string;
     id: number;
     node_id: string;

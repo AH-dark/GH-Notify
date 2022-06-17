@@ -8,7 +8,7 @@ export default interface Repository {
     private: boolean;
     owner: Sender;
     html_url: string;
-    description: null;
+    description: string | null;
     fork: boolean;
     url: string;
     forks_url: string;

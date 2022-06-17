@@ -43,11 +43,11 @@ export default class WxWorkBot implements Sender {
         }
     }
 
-    async sendMarkdownMessage(msg: string) {
+    async sendMarkdownMessage(msg: string[]) {
         const res = await this.axios.post("/send", {
             msgtype: "markdown",
             markdown: {
-                content: msg,
+                content: msg.join("\n"),
             },
         });
 

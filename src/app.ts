@@ -2,6 +2,7 @@ import Handler from "./model/handler";
 import WxWorkBot from "./sender/wxWorkBot";
 import Sender from "./model/sender";
 import PingHandler from "./controller/pingHandler";
+import PushHandler from "./controller/pushHandler";
 
 const main: Handler = async (event, context) => {
     // GitHub Event Name
@@ -52,9 +53,14 @@ const main: Handler = async (event, context) => {
             };
     }
 
+    const data = JSON.parse(event.body);
+
     switch (ghEventName) {
         case "ping":
-            await PingHandler(event, sender);
+            await PingHandler(data, sender);
+            break;
+        case "push":
+            await PushHandler(data, sender);
             break;
         default:
             return {
